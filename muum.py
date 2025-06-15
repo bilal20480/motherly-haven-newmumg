@@ -10,7 +10,10 @@ import os
 st.set_page_config(page_title="MomCare: Your Personalized Baby Care Guide", layout="centered")
 
 # ✅ Gemini API Setup
-genai.configure(api_key="AIzaSyC9jEg8Icw6kMPs0tdncQKUCGtdeI_xINo")  # Replace with your API key
+api_key=st.secrets["bilal_api"]
+
+# Configure Gemini API key
+genai.configure(api_key=api_key)  # Replace with your API key
 model = genai.GenerativeModel("gemini-2.0-flash")
 chat = model.start_chat(history=[])
 
